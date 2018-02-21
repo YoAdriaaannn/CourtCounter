@@ -3,10 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     android:orientation="horizontal"
     tools:context="com.example.android.courtcounter.MainActivity">
 
     <LinearLayout
+        android:id="@+id/layout_team_a"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -17,45 +19,45 @@
             android:id="@+id/team_a_tag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
+            android:gravity="center"
             android:text="Team A" />
 
         <TextView
             android:id="@+id/team_a_score"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
+            android:gravity="center"
             android:text="" />
 
         <Button
-            android:id="@+id/button_3_points"
+            android:id="@+id/button_a_3_points"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:gravity="center_horizontal"
+            android:gravity="center"
             android:onClick="threePointsForTeamA"
             android:text="+ 3 Points"
             android:textAllCaps="true" />
 
         <Button
-            android:id="@+id/button_2_points"
+            android:id="@+id/button_a_2_points"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:gravity="center_horizontal"
+            android:gravity="center"
 
             android:onClick="twoPointsForTeamA"
             android:text="+ 2 Points"
             android:textAllCaps="true" />
 
         <Button
-            android:id="@+id/button_free_throw"
+            android:id="@+id/button_a_free_throw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
 
-            android:gravity="center_horizontal"
-            android:onClick="freeThrow"
+            android:gravity="center"
+            android:onClick="freeThrowForTeamA"
 
             android:text="free throw"
             android:textAllCaps="true" />
@@ -63,6 +65,7 @@
 
 
     <LinearLayout
+        android:id="@+id/layout_team_b"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -73,14 +76,14 @@
             android:id="@+id/team_b_tag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
+            android:gravity="center"
             android:text="Team B" />
 
         <TextView
             android:id="@+id/team_b_score"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
+            android:gravity="center"
             android:text="" />
 
         <Button
@@ -88,8 +91,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:gravity="center_horizontal"
-            android:onClick="threePointsForTeamA"
+            android:gravity="center"
+            android:onClick="threePointsForTeamB"
             android:text="+ 3 Points"
             android:textAllCaps="true" />
 
@@ -98,9 +101,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:gravity="center_horizontal"
+            android:gravity="center"
 
-            android:onClick="twoPointsForTeamA"
+            android:onClick="twoPointsForTeamB"
             android:text="+ 2 Points"
             android:textAllCaps="true" />
 
@@ -110,8 +113,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
 
-            android:gravity="center_horizontal"
-            android:onClick="freeThrow"
+            android:gravity="center"
+            android:onClick="freeThrowForTeamB"
 
             android:text="free throw"
             android:textAllCaps="true" />
