@@ -90,5 +90,12 @@ public class MainActivity extends AppCompatActivity {
         scoreTeamB = scoreTeamB + 1;
         displayForTeamB(scoreTeamB);
     }
+
+    public void resetScore(View v) {
+        scoreTeamA = 0;
+        scoreTeamB = 0;
+        displayForTeamA(scoreTeamA);
+        displayForTeamB(scoreTeamB);
+    }
 }
 
