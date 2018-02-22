@@ -10,4 +10,10 @@
 <resources>
     <string name="app_name">POTTY MOUTH</string>
     <string name="title_1">POTTY MOUTH</string>
+    <string name="title_3">enter your names</string>
+    <string name="input_1">PLAYER ONE</string>
+    <string name="header_title_1">enter your name</string>
+    <string name="input_2">PLAYER TWO</string>
+    <string name="button_text_play">Play!</string>
+    <string name="button_text_reset">Reset</string>
 </resources>
