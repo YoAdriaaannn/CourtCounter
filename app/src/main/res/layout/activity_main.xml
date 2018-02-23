@@ -62,7 +62,7 @@
                 android:layout_margin="8dp"
                 android:gravity="center"
                 android:onClick="threePointsForTeamA"
-                android:text="+ 3 Points"
+                android:text="@string/team_a_button_1"
                 android:textAllCaps="true" />
 
             <Button
@@ -72,7 +72,7 @@
                 android:layout_margin="8dp"
                 android:gravity="center"
                 android:onClick="twoPointsForTeamA"
-                android:text="+ 2 Points"
+                android:text="@string/team_a_button_2"
                 android:textAllCaps="true" />
 
             <Button
@@ -81,8 +81,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:gravity="center"
-                android:onClick="freeThrowForTeamA"
-                android:text="free throw"
+                android:onClick="onePointForTeamA"
+                android:text="@string/team_a_button_3"
                 android:textAllCaps="true" />
         </LinearLayout>
 
@@ -128,7 +128,7 @@
                 android:layout_margin="8dp"
                 android:gravity="center"
                 android:onClick="threePointsForTeamB"
-                android:text="+ 3 Points"
+                android:text="@string/team_b_button_1"
                 android:textAllCaps="true" />
 
             <Button
@@ -138,7 +138,7 @@
                 android:layout_margin="8dp"
                 android:gravity="center"
                 android:onClick="twoPointsForTeamB"
-                android:text="+ 2 Points"
+                android:text="@string/team_b_button_2"
                 android:textAllCaps="true" />
 
             <Button
@@ -147,8 +147,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:gravity="center"
-                android:onClick="freeThrowForTeamB"
-                android:text="free throw"
+                android:onClick="onePointForForTeamB"
+                android:text="@string/team_b_button_3"
                 android:textAllCaps="true" />
 
         </LinearLayout>
@@ -161,10 +161,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="32dp"
         android:onClick="resetScore"
-        android:text="reset"
+        android:text="@string/button_text_reset"
         android:textAllCaps="true" />
 
 

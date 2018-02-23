@@ -29,19 +29,38 @@ public class MainActivity extends AppCompatActivity {
 
     int scoreTeamB = 0;
 
+    /**
+     * Set up name variables for the players
+     */
+
+    String playerTwo = Main2Activity.etPlayer2.getText().toString();
+    String playerOne = Main2Activity.etPlayer1.getText().toString();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        displayPlayerTwoName(playerTwo);
+        displayPlayerOneName(playerOne);
     }
 
     /**
      * Displays the given score for team A.
      */
+
     public void displayForTeamA(int score) {
         TextView scoreView = findViewById(R.id.team_a_score);
         scoreView.setText(String.valueOf(score));
+    }
+
+    /**
+     * Display name of player two
+     */
+    public void displayPlayerOneName(String name) {
+        TextView scoreView = findViewById(R.id.team_a_tag);
+        scoreView.setText(String.valueOf(name));
     }
 
     /**
@@ -63,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Increase score by 1 for team A
      */
-    public void freeThrowForTeamA(View v) {
+    public void onePointForTeamA(View v) {
         scoreTeamA = scoreTeamA + 1;
         displayForTeamA(scoreTeamA);
     }
@@ -75,6 +94,15 @@ public class MainActivity extends AppCompatActivity {
     public void displayForTeamB(int score) {
         TextView scoreView = findViewById(R.id.team_b_score);
         scoreView.setText(String.valueOf(score));
+    }
+
+    /**
+     *
+     *  Display name of player two
+     */
+    public void displayPlayerTwoName(String name) {
+        TextView scoreView = findViewById(R.id.team_b_tag);
+        scoreView.setText(String.valueOf(name));
     }
 
     /**
@@ -96,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Increase score by 1 for team B
      */
-    public void freeThrowForTeamB(View v) {
+    public void onePointForForTeamB(View v) {
         scoreTeamB = scoreTeamB + 1;
         displayForTeamB(scoreTeamB);
     }
