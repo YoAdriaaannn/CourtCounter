@@ -60,6 +60,7 @@
                 android:id="@+id/button_a_3_points"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_margin="8dp"
                 android:gravity="center"
                 android:onClick="threePointsForTeamA"
@@ -70,6 +71,7 @@
                 android:id="@+id/button_a_2_points"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_margin="8dp"
                 android:gravity="center"
                 android:onClick="twoPointsForTeamA"
@@ -80,6 +82,7 @@
                 android:id="@+id/button_a_free_throw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_margin="8dp"
                 android:gravity="center"
                 android:onClick="onePointForTeamA"
@@ -88,10 +91,13 @@
 
             <Button
                 android:id="@+id/button_a_tidepod"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+
+                android:layout_gravity="center_horizontal"
                 android:layout_margin="8dp"
-                android:gravity="center"
+                android:background="@drawable/tidepod"
+                android:gravity="center_horizontal|center"
                 android:onClick="resetTeamA"
                 android:text="@string/team_a_button_4"
                 android:textAllCaps="true" />
@@ -138,6 +144,7 @@
                 android:id="@+id/button_b_3_points"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_margin="8dp"
                 android:gravity="center"
                 android:onClick="threePointsForTeamB"
@@ -148,6 +155,7 @@
                 android:id="@+id/button_b_2_points"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_margin="8dp"
                 android:gravity="center"
                 android:onClick="twoPointsForTeamB"
@@ -158,6 +166,7 @@
                 android:id="@+id/button_b_free_throw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_margin="8dp"
                 android:gravity="center"
                 android:onClick="onePointForForTeamB"
@@ -166,10 +175,12 @@
 
             <Button
                 android:id="@+id/button_b_tidepod"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_margin="8dp"
-                android:gravity="center"
+                android:background="@drawable/tidepod"
+                android:gravity="center_vertical|center_horizontal|center"
                 android:onClick="resetTeamB"
                 android:text="@string/team_b_button_4"
                 android:textAllCaps="true" />

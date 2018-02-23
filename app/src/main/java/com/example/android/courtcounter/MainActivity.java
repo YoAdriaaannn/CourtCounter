@@ -10,38 +10,42 @@
 
 package com.example.android.courtcounter;
 
+import android.content.res.Resources;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
+    /**
+     * Random generator
+     */
+
+    private static final Random rgenerator = new Random();
     /**
      * Set up a variable to keep score for team A
      */
 
     int scoreTeamA = 0;
-
     /**
      * Set up a variable to keep score for team B
      */
 
     int scoreTeamB = 0;
-
     /**
      * Set up name variables for the players
      */
 
     String playerTwo = Main2Activity.etPlayer2.getText().toString();
     String playerOne = Main2Activity.etPlayer1.getText().toString();
-
     /**
      * This string will be used to store winner message.
      */
     String winnerString = "";
-
     /**
      * Sound effects
      */
@@ -50,19 +54,17 @@ public class MainActivity extends AppCompatActivity {
     MediaPlayer mpSadLoser;
     MediaPlayer mpBgMusic;
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         /**
-         * BG Music
+         * BG Music start
          *
          */
-
         bgMusic();
 
-
+        // Call our first methods to display player names
         displayPlayerTwoName(playerTwo);
         displayPlayerOneName(playerOne);
 
@@ -185,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
 
         displayForTeamA(scoreTeamA);
         displayForTeamB(scoreTeamB);
-        winnerString = "Player " + playerOne + " eats a TIDE POD!";
+        winnerString = playerOne + " eats a TIDE POD! Ultra clean mouth!";
         toiletFlush();
         TextView winner = findViewById(R.id.text_who_is_winner);
         winner.setText(String.valueOf(winnerString));
@@ -196,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
 
         displayForTeamA(scoreTeamA);
         displayForTeamB(scoreTeamB);
-        winnerString = "Player " + playerTwo + " eats a TIDE POD!";
+        winnerString = playerTwo + " eats a TIDE POD! Ultra clean mouth!";
         toiletFlush();
         TextView winner = findViewById(R.id.text_who_is_winner);
         winner.setText(String.valueOf(winnerString));
@@ -206,6 +208,8 @@ public class MainActivity extends AppCompatActivity {
      * These methods are to play sound effects when button is clicked. I used MediaPlayer here.
      * TDL: There is an odd bug here where continuous clicks on buttons cause sound to stop working.
      */
+
+    // Main buttons sound effect
     public void playCensorBeep() {
 
         if (mpCensorBeep != null) {
@@ -214,15 +218,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         mpCensorBeep = MediaPlayer.create(getApplicationContext(), R.raw.censorbeep);
-
         mpCensorBeep.start();
 
 
-        return;
-
     }
 
-    private void toiletFlush() {
+    // General sound effect
+    public void toiletFlush() {
 
         if (mpToiletFlush != null) {
             mpToiletFlush.stop();
@@ -230,13 +232,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
         mpToiletFlush = MediaPlayer.create(getApplicationContext(), R.raw.toiletflush);
-
         mpToiletFlush.start();
 
-        return;
     }
 
-    private void sadLoser() {
+    // Loser sound effect
+    public void sadLoser() {
         if (mpSadLoser != null) {
             mpSadLoser.stop();
             mpSadLoser.release();
@@ -245,24 +246,39 @@ public class MainActivity extends AppCompatActivity {
         mpSadLoser = MediaPlayer.create(getApplicationContext(), R.raw.sadloser);
         mpSadLoser.start();
 
-        return;
+
     }
 
-
+    // Background music
     public void bgMusic() {
+        if (mpBgMusic != null) {
+            mpBgMusic.stop();
+            mpBgMusic.release();
+        }
+
         mpBgMusic = MediaPlayer.create(getApplicationContext(), R.raw.bgmusic);
         mpBgMusic.start();
 
     }
+
     /**
-     * This method is used to check for a winner (or loser in this case)
+     * This method is used to check for a winner (or loser in this case) When someone loses, play the sad loser sound effect, stop the background music
+     * and display who lost.
      */
 
     public void checkScore() {
 
+        String[] myString;
 
+        Resources res = getResources();
+
+        myString = res.getStringArray(R.array.loserMessageArray);
+
+        String randomString = myString[rgenerator.nextInt(myString.length)];
+
+        // Check to see if team a lost if not go to next
         if (scoreTeamA >= 50) {
-            winnerString = "You have a big potty mouth " + playerOne + " YOU LOSE!";
+            winnerString = "You have a big potty mouth " + playerOne + " YOU LOSE! " + randomString;
             TextView winner = findViewById(R.id.text_who_is_winner);
             winner.setText(String.valueOf(winnerString));
             sadLoser();
@@ -270,9 +286,9 @@ public class MainActivity extends AppCompatActivity {
             return;
 
         }
-
+        // check to see if teab b lost if not go to next
         if (scoreTeamB >= 50) {
-            winnerString = "You have a big potty mouth " + playerTwo + " YOU LOSE!";
+            winnerString = "You have a big potty mouth " + playerTwo + " YOU LOSE! " + randomString;
             TextView winner = findViewById(R.id.text_who_is_winner);
             winner.setText(String.valueOf(winnerString));
             sadLoser();
@@ -280,7 +296,7 @@ public class MainActivity extends AppCompatActivity {
             return;
 
         } else {
-
+            // If no one has lost yet display a message stating the game is still on
             winnerString = "So far there is no big loser.";
             TextView winner = findViewById(R.id.text_who_is_winner);
             winner.setText(String.valueOf(winnerString));
