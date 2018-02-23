@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     MediaPlayer mpToiletFlush;
     MediaPlayer mpCensorBeep;
     MediaPlayer mpSadLoser;
+    MediaPlayer mpBgMusic;
 
 
     @Override
@@ -55,10 +56,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         /**
-         * sound effects
+         * BG Music
          *
          */
 
+        bgMusic();
 
 
         displayPlayerTwoName(playerTwo);
@@ -170,6 +172,7 @@ public class MainActivity extends AppCompatActivity {
         displayForTeamB(scoreTeamB);
         winnerString = "Ready to play again!";
         toiletFlush();
+        bgMusic();
         TextView winner = findViewById(R.id.text_who_is_winner);
         winner.setText(String.valueOf(winnerString));
     }
@@ -245,6 +248,12 @@ public class MainActivity extends AppCompatActivity {
         return;
     }
 
+
+    public void bgMusic() {
+        mpBgMusic = MediaPlayer.create(getApplicationContext(), R.raw.bgmusic);
+        mpBgMusic.start();
+
+    }
     /**
      * This method is used to check for a winner (or loser in this case)
      */
@@ -257,6 +266,7 @@ public class MainActivity extends AppCompatActivity {
             TextView winner = findViewById(R.id.text_who_is_winner);
             winner.setText(String.valueOf(winnerString));
             sadLoser();
+            mpBgMusic.stop();
             return;
 
         }
@@ -266,6 +276,7 @@ public class MainActivity extends AppCompatActivity {
             TextView winner = findViewById(R.id.text_who_is_winner);
             winner.setText(String.valueOf(winnerString));
             sadLoser();
+            mpBgMusic.stop();
             return;
 
         } else {
