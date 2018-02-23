@@ -12,7 +12,7 @@
     <string name="title_1">POTTY MOUTH</string>
     <string name="title_3">enter your names</string>
     <string name="input_1">PLAYER ONE</string>
-    <string name="header_title_1">enter your name</string>
+    <string name="header_title_1">enter your names</string>
     <string name="input_2">PLAYER TWO</string>
     <string name="button_text_play">Play!</string>
     <string name="button_text_reset">Soapy Water</string>
@@ -22,4 +22,5 @@
     <string name="team_b_button_1">f words</string>
     <string name="team_b_button_2">s words</string>
     <string name="team_b_button_3">a words</string>
+    <string name="text_instructions">Welcome to Potty Mouth where the person with the most dirty mouth LOSES! To begin playing, enter your names in the text boxes below. Every time someone says something dirty they must click the button corresponding to the word they said. First person to reach 50 points or more LOSES!</string>
 </resources>
