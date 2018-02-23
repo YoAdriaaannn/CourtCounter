@@ -10,6 +10,7 @@
 
 package com.example.android.courtcounter;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -36,6 +37,10 @@ public class MainActivity extends AppCompatActivity {
     String playerTwo = Main2Activity.etPlayer2.getText().toString();
     String playerOne = Main2Activity.etPlayer1.getText().toString();
 
+    /**
+     * This string will be used to store winner message.
+     */
+    String winnerString = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
     public void threePointsForTeamA(View v) {
         scoreTeamA = scoreTeamA + 3;
         displayForTeamA(scoreTeamA);
+        playCensorBeep();
+        checkScore();
     }
 
     /**
@@ -77,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
     public void twoPointsForTeamA(View v) {
         scoreTeamA = scoreTeamA + 2;
         displayForTeamA(scoreTeamA);
+        playCensorBeep();
+        checkScore();
     }
 
     /**
@@ -85,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
     public void onePointForTeamA(View v) {
         scoreTeamA = scoreTeamA + 1;
         displayForTeamA(scoreTeamA);
+        playCensorBeep();
+        checkScore();
     }
 
 
@@ -97,8 +108,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     *
-     *  Display name of player two
+     * Display name of player two
      */
     public void displayPlayerTwoName(String name) {
         TextView scoreView = findViewById(R.id.team_b_tag);
@@ -111,6 +121,8 @@ public class MainActivity extends AppCompatActivity {
     public void threePointsForTeamB(View v) {
         scoreTeamB = scoreTeamB + 3;
         displayForTeamB(scoreTeamB);
+        playCensorBeep();
+        checkScore();
     }
 
     /**
@@ -119,6 +131,8 @@ public class MainActivity extends AppCompatActivity {
     public void twoPointsForTeamB(View v) {
         scoreTeamB = scoreTeamB + 2;
         displayForTeamB(scoreTeamB);
+        playCensorBeep();
+        checkScore();
     }
 
     /**
@@ -127,6 +141,8 @@ public class MainActivity extends AppCompatActivity {
     public void onePointForForTeamB(View v) {
         scoreTeamB = scoreTeamB + 1;
         displayForTeamB(scoreTeamB);
+        playCensorBeep();
+        checkScore();
     }
 
     public void resetScore(View v) {
@@ -134,6 +150,77 @@ public class MainActivity extends AppCompatActivity {
         scoreTeamB = 0;
         displayForTeamA(scoreTeamA);
         displayForTeamB(scoreTeamB);
+        toiletFlush();
+    }
+
+    /**
+     * These methods are to play sound effects when button is clicked. I used MediaPlayer here.
+     * TDL: There is an odd bug here where continuous clicks on buttons cause sound to stop working.
+     */
+    public void playCensorBeep() {
+        MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.censorbeep);
+        // this gist seems to fix bug of sound not playing after x amount of clicks
+        if (mp != null) {
+            mp.release();
+        }
+        mp = MediaPlayer.create(this, R.raw.censorbeep);
+        mp.start();
+
+    }
+
+    private void toiletFlush() {
+
+        MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.toiletflush);
+        // this gist seems to fix bug of sound not playing after x amount of clicks
+        if (mp != null) {
+            mp.release();
+        }
+        mp = MediaPlayer.create(this, R.raw.toiletflush);
+        mp.start();
+    }
+
+    private void sadLoser() {
+        MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.sadloser);
+        // this gist seems to fix bug of sound not playing after x amount of clicks
+        if (mp != null) {
+            mp.release();
+        }
+        mp = MediaPlayer.create(this, R.raw.sadloser);
+        mp.start();
+        return;
+
+    }
+
+    /**
+     * This method is used to check for a winner (or loser in this case)
+     */
+
+    public void checkScore() {
+
+
+        if (scoreTeamA >= 50) {
+            winnerString = "You have a big potty mouth " + playerOne + " YOU LOSE!";
+            TextView winner = findViewById(R.id.text_who_is_winner);
+            winner.setText(String.valueOf(winnerString));
+            sadLoser();
+            return;
+
+        }
+
+        if (scoreTeamB >= 50) {
+            winnerString = "You have a big potty mouth " + playerTwo + " YOU LOSE!";
+            TextView winner = findViewById(R.id.text_who_is_winner);
+            winner.setText(String.valueOf(winnerString));
+            sadLoser();
+            return;
+        } else {
+
+            winnerString = "So far there is no big loser.";
+            TextView winner = findViewById(R.id.text_who_is_winner);
+            winner.setText(String.valueOf(winnerString));
+        }
+
+
     }
 }
 
