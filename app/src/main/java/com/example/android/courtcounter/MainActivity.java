@@ -42,13 +42,28 @@ public class MainActivity extends AppCompatActivity {
      */
     String winnerString = "";
 
+    /**
+     * Sound effects
+     */
+    MediaPlayer mpToiletFlush;
+    MediaPlayer mpCensorBeep;
+    MediaPlayer mpSadLoser;
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        /**
+         * sound effects
+         *
+         */
+
+
 
         displayPlayerTwoName(playerTwo);
         displayPlayerOneName(playerOne);
+
     }
 
     /**
@@ -150,7 +165,10 @@ public class MainActivity extends AppCompatActivity {
         scoreTeamB = 0;
         displayForTeamA(scoreTeamA);
         displayForTeamB(scoreTeamB);
+        winnerString = "Ready to play again!";
         toiletFlush();
+        TextView winner = findViewById(R.id.text_who_is_winner);
+        winner.setText(String.valueOf(winnerString));
     }
 
     /**
@@ -158,37 +176,45 @@ public class MainActivity extends AppCompatActivity {
      * TDL: There is an odd bug here where continuous clicks on buttons cause sound to stop working.
      */
     public void playCensorBeep() {
-        MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.censorbeep);
-        // this gist seems to fix bug of sound not playing after x amount of clicks
-        if (mp != null) {
-            mp.release();
+
+        if (mpCensorBeep != null) {
+            mpCensorBeep.stop();
+            mpCensorBeep.release();
         }
-        mp = MediaPlayer.create(this, R.raw.censorbeep);
-        mp.start();
+
+        mpCensorBeep = MediaPlayer.create(getApplicationContext(), R.raw.censorbeep);
+
+        mpCensorBeep.start();
+
+
+        return;
 
     }
 
     private void toiletFlush() {
 
-        MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.toiletflush);
-        // this gist seems to fix bug of sound not playing after x amount of clicks
-        if (mp != null) {
-            mp.release();
+        if (mpToiletFlush != null) {
+            mpToiletFlush.stop();
+            mpToiletFlush.release();
         }
-        mp = MediaPlayer.create(this, R.raw.toiletflush);
-        mp.start();
+
+        mpToiletFlush = MediaPlayer.create(getApplicationContext(), R.raw.toiletflush);
+
+        mpToiletFlush.start();
+
+        return;
     }
 
     private void sadLoser() {
-        MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.sadloser);
-        // this gist seems to fix bug of sound not playing after x amount of clicks
-        if (mp != null) {
-            mp.release();
+        if (mpSadLoser != null) {
+            mpSadLoser.stop();
+            mpSadLoser.release();
         }
-        mp = MediaPlayer.create(this, R.raw.sadloser);
-        mp.start();
-        return;
 
+        mpSadLoser = MediaPlayer.create(getApplicationContext(), R.raw.sadloser);
+        mpSadLoser.start();
+
+        return;
     }
 
     /**
@@ -213,6 +239,7 @@ public class MainActivity extends AppCompatActivity {
             winner.setText(String.valueOf(winnerString));
             sadLoser();
             return;
+
         } else {
 
             winnerString = "So far there is no big loser.";
@@ -223,4 +250,5 @@ public class MainActivity extends AppCompatActivity {
 
     }
 }
+
 
