@@ -13,6 +13,6 @@
         <!-- Primary theme color of the app (sets background color of app bar) -->
         <item name="colorPrimary">@android:color/holo_red_light</item>
         <!-- Background color of buttons in the app -->
-        <item name="colorButtonNormal">#ff0040</item>
+        <item name="colorButtonNormal">#b0ff0040</item>
     </style>
 </resources>

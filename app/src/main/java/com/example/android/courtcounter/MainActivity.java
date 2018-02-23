@@ -160,12 +160,40 @@ public class MainActivity extends AppCompatActivity {
         checkScore();
     }
 
+    /**
+     * Reset the game
+     */
     public void resetScore(View v) {
         scoreTeamA = 0;
         scoreTeamB = 0;
         displayForTeamA(scoreTeamA);
         displayForTeamB(scoreTeamB);
         winnerString = "Ready to play again!";
+        toiletFlush();
+        TextView winner = findViewById(R.id.text_who_is_winner);
+        winner.setText(String.valueOf(winnerString));
+    }
+
+    /**
+     * Players eat a Tide Pod washes out that potty mouth and resets score
+     */
+    public void resetTeamA(View v) {
+        scoreTeamA = 0;
+
+        displayForTeamA(scoreTeamA);
+        displayForTeamB(scoreTeamB);
+        winnerString = "Player " + playerOne + " eats a TIDE POD!";
+        toiletFlush();
+        TextView winner = findViewById(R.id.text_who_is_winner);
+        winner.setText(String.valueOf(winnerString));
+    }
+
+    public void resetTeamB(View v) {
+        scoreTeamB = 0;
+
+        displayForTeamA(scoreTeamA);
+        displayForTeamB(scoreTeamB);
+        winnerString = "Player " + playerTwo + " eats a TIDE POD!";
         toiletFlush();
         TextView winner = findViewById(R.id.text_who_is_winner);
         winner.setText(String.valueOf(winnerString));

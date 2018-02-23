@@ -38,6 +38,7 @@
                 android:id="@+id/team_a_tag"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#99fc3535"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center"
                 android:text="Team A"
@@ -85,6 +86,16 @@
                 android:onClick="onePointForTeamA"
                 android:text="@string/team_a_button_3"
                 android:textAllCaps="true" />
+
+            <Button
+                android:id="@+id/button_a_tidepod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:onClick="resetTeamA"
+                android:text="@string/team_a_button_4"
+                android:textAllCaps="true" />
         </LinearLayout>
 
         <View
@@ -104,9 +115,11 @@
                 android:id="@+id/team_b_tag"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#99fc3535"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center"
                 android:text="Team B"
+
                 android:textColor="#616161"
                 android:textSize="14sp" />
 
@@ -152,18 +165,29 @@
                 android:text="@string/team_b_button_3"
                 android:textAllCaps="true" />
 
+            <Button
+                android:id="@+id/button_b_tidepod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:onClick="resetTeamB"
+                android:text="@string/team_b_button_4"
+                android:textAllCaps="true" />
+
         </LinearLayout>
 
     </LinearLayout>
 
     <TextView
         android:id="@+id/text_who_is_winner"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/button_reset"
         android:layout_centerInParent="true"
+        android:layout_marginBottom="32dp"
+        android:background="#99fc3535"
         android:fontFamily="sans-serif-medium"
-        android:padding="16dp"
         android:text=""
         android:textColor="#FFFFFF"
         android:textSize="20sp" />
