@@ -1,19 +1,4 @@
-#Fri Feb 23 21:00:56 PST 2018
-path.1=classes.dex
+#Fri Feb 23 21:05:17 PST 2018
+base.0=D\:\\Users\\atomi\\AndroidStudioProjects\\UdacityGrowWithGoogle\\CourtCounter\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\399
 path.0=classes.dex
-renamed.5=classes6.dex
-renamed.4=classes5.dex
-renamed.3=classes4.dex
-renamed.2=classes3.dex
-renamed.1=classes2.dex
 renamed.0=classes.dex
-base.5=D\:\\Users\\atomi\\AndroidStudioProjects\\UdacityGrowWithGoogle\\CourtCounter\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\394
-base.4=D\:\\Users\\atomi\\AndroidStudioProjects\\UdacityGrowWithGoogle\\CourtCounter\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\393
-base.3=D\:\\Users\\atomi\\AndroidStudioProjects\\UdacityGrowWithGoogle\\CourtCounter\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\396
-base.2=D\:\\Users\\atomi\\AndroidStudioProjects\\UdacityGrowWithGoogle\\CourtCounter\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\395
-base.1=D\:\\Users\\atomi\\AndroidStudioProjects\\UdacityGrowWithGoogle\\CourtCounter\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\397
-base.0=D\:\\Users\\atomi\\AndroidStudioProjects\\UdacityGrowWithGoogle\\CourtCounter\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\392
-path.5=classes.dex
-path.4=classes.dex
-path.3=classes.dex
-path.2=classes.dex
