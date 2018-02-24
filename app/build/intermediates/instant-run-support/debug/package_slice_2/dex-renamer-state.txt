@@ -1,0 +1,4 @@
+#Fri Feb 23 21:00:42 PST 2018
+base.0=D\:\\Users\\atomi\\AndroidStudioProjects\\UdacityGrowWithGoogle\\CourtCounter\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\383
+path.0=classes.dex
+renamed.0=classes.dex
