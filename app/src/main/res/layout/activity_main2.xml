@@ -79,6 +79,7 @@
         android:layout_gravity="center_horizontal"
         android:padding="16dp"
         android:text="@string/button_text_play"
-        android:textAllCaps="true" />
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF" />
 
 </LinearLayout>

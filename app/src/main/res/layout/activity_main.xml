@@ -41,7 +41,7 @@
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center"
                 android:text="Team A"
-                android:textColor="#616161"
+                android:textColor="#FFFFFF"
                 android:textSize="14sp" />
 
             <TextView
@@ -65,7 +65,8 @@
                 android:gravity="center"
                 android:onClick="threePointsForTeamA"
                 android:text="@string/team_a_button_1"
-                android:textAllCaps="true" />
+                android:textAllCaps="true"
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/button_a_2_points"
@@ -76,7 +77,8 @@
                 android:gravity="center"
                 android:onClick="twoPointsForTeamA"
                 android:text="@string/team_a_button_2"
-                android:textAllCaps="true" />
+                android:textAllCaps="true"
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/button_a_free_throw"
@@ -87,7 +89,8 @@
                 android:gravity="center"
                 android:onClick="onePointForTeamA"
                 android:text="@string/team_a_button_3"
-                android:textAllCaps="true" />
+                android:textAllCaps="true"
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/button_a_tidepod"
@@ -125,7 +128,7 @@
                 android:gravity="center"
                 android:text="Team B"
 
-                android:textColor="#616161"
+                android:textColor="#FFFFFF"
                 android:textSize="14sp" />
 
             <TextView
@@ -149,7 +152,8 @@
                 android:gravity="center"
                 android:onClick="threePointsForTeamB"
                 android:text="@string/team_b_button_1"
-                android:textAllCaps="true" />
+                android:textAllCaps="true"
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/button_b_2_points"
@@ -160,7 +164,8 @@
                 android:gravity="center"
                 android:onClick="twoPointsForTeamB"
                 android:text="@string/team_b_button_2"
-                android:textAllCaps="true" />
+                android:textAllCaps="true"
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/button_b_free_throw"
@@ -171,7 +176,8 @@
                 android:gravity="center"
                 android:onClick="onePointForForTeamB"
                 android:text="@string/team_b_button_3"
-                android:textAllCaps="true" />
+                android:textAllCaps="true"
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/button_b_tidepod"
@@ -212,7 +218,8 @@
         android:layout_marginBottom="32dp"
         android:onClick="resetScore"
         android:text="@string/button_text_reset"
-        android:textAllCaps="true" />
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF" />
 
 
 </RelativeLayout>

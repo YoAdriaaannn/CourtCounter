@@ -268,13 +268,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void checkScore() {
 
-        String[] myString;
+        String[] myMessage;
 
         Resources res = getResources();
 
-        myString = res.getStringArray(R.array.loserMessageArray);
+        myMessage = res.getStringArray(R.array.loserMessageArray);
 
-        String randomString = myString[rgenerator.nextInt(myString.length)];
+        String randomString = myMessage[rgenerator.nextInt(myMessage.length)];
 
         // Check to see if team a lost if not go to next
         if (scoreTeamA >= 50) {
