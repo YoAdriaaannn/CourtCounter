@@ -1,4 +1,4 @@
-##Potty Mouth.
+#Potty Mouth.
 A branch from the original Court Counter app made during the Udacity Grow With Google Android Nanodegree program.
 
 The original app required students to make a score counter app. This app takes things on step further and turns it into a game to keep track of who is the biggest potty mouth. Instead of a swear jar. You now have a swear app!
