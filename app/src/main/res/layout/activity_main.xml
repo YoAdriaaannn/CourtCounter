@@ -94,9 +94,8 @@
 
             <Button
                 android:id="@+id/button_a_tidepod"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
+                android:layout_width="100dp"
+                android:layout_height="80dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="8dp"
                 android:background="@drawable/tidepod"
@@ -104,6 +103,7 @@
                 android:onClick="resetTeamA"
                 android:text="@string/team_a_button_4"
                 android:textAllCaps="true" />
+
         </LinearLayout>
 
         <View
@@ -127,7 +127,6 @@
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center"
                 android:text="Team B"
-
                 android:textColor="#FFFFFF"
                 android:textSize="14sp" />
 
@@ -181,8 +180,8 @@
 
             <Button
                 android:id="@+id/button_b_tidepod"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="8dp"
                 android:background="@drawable/tidepod"
