@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This string will be used to store winner message.
      */
-    String winnerString = "";
+    String winnerString ;
     /**
      * Sound effects
      */
@@ -187,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
 
         displayForTeamA(scoreTeamA);
         displayForTeamB(scoreTeamB);
-        winnerString = playerOne + " eats a TIDE POD! Ultra clean mouth!";
+        winnerString = playerOne + " " + getString(R.string.playerReset);
         toiletFlush();
         TextView winner = findViewById(R.id.text_who_is_winner);
         winner.setText(String.valueOf(winnerString));
@@ -198,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
 
         displayForTeamA(scoreTeamA);
         displayForTeamB(scoreTeamB);
-        winnerString = playerTwo + " eats a TIDE POD! Ultra clean mouth!";
+        winnerString = playerTwo + " " + getString(R.string.playerReset);
         toiletFlush();
         TextView winner = findViewById(R.id.text_who_is_winner);
         winner.setText(String.valueOf(winnerString));
@@ -278,7 +278,14 @@ public class MainActivity extends AppCompatActivity {
 
         // Check to see if team a lost if not go to next
         if (scoreTeamA >= 50) {
-            winnerString = "You have a big potty mouth " + playerOne + " YOU LOSE! " + randomString;
+            /**
+             *  The strings here are stored in resources so we can change them real easy later on. See strings.xml to see how this works.
+             *  I basically use getString to gets a value from resources which is the strings called winString1 - etc. I then concatenate
+             *  them into one sentence with the player names in variable form             */
+
+
+
+            winnerString = getString(R.string.winString1) + " " + playerOne + " " + getString(R.string.winString3) + randomString;
             TextView winner = findViewById(R.id.text_who_is_winner);
             winner.setText(String.valueOf(winnerString));
             sadLoser();
@@ -286,9 +293,9 @@ public class MainActivity extends AppCompatActivity {
             return;
 
         }
-        // check to see if teab b lost if not go to next
+        // check to see if team b lost if not go to next
         if (scoreTeamB >= 50) {
-            winnerString = "You have a big potty mouth " + playerTwo + " YOU LOSE! " + randomString;
+            winnerString = getString(R.string.winString1) + " " + playerTwo + " " + getString(R.string.winString3) + randomString;
             TextView winner = findViewById(R.id.text_who_is_winner);
             winner.setText(String.valueOf(winnerString));
             sadLoser();
@@ -297,7 +304,7 @@ public class MainActivity extends AppCompatActivity {
 
         } else {
             // If no one has lost yet display a message stating the game is still on
-            winnerString = "So far there is no big loser.";
+            winnerString = getString(R.string.winString2);
             TextView winner = findViewById(R.id.text_who_is_winner);
             winner.setText(String.valueOf(winnerString));
         }

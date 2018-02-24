@@ -50,10 +50,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
                 android:layout_marginTop="16dp"
+                android:background="#c4554c4c"
                 android:fontFamily="sans-serif-light"
                 android:gravity="center"
                 android:text=""
-                android:textColor="#000000"
+                android:textColor="#ff0048"
                 android:textSize="56sp" />
 
             <Button
@@ -136,10 +137,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
                 android:layout_marginTop="16dp"
+                android:background="#c4554c4c"
                 android:fontFamily="sans-serif-light"
                 android:gravity="center"
                 android:text=""
-                android:textColor="#000000"
+                android:textColor="#ff0048"
                 android:textSize="56sp" />
 
             <Button
@@ -150,7 +152,7 @@
                 android:layout_margin="8dp"
                 android:gravity="center"
                 android:onClick="threePointsForTeamB"
-                android:text="@string/team_b_button_1"
+                android:text="#FFFFFF"
                 android:textAllCaps="true"
                 android:textColor="#FFFFFF" />
 

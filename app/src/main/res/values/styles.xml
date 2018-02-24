@@ -14,5 +14,11 @@
         <item name="colorPrimary">@android:color/holo_red_light</item>
         <!-- Background color of buttons in the app -->
         <item name="colorButtonNormal">#b0ff0040</item>
+
     </style>
+
+    <string name="colorTextStandard">#FFFFFF</string>
+
+    <string name="colorTextScore">#000000</string>
+    <string name="colorText2">#FFFFFF</string>
 </resources>
